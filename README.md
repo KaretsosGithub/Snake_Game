@@ -2,7 +2,7 @@ Snake Game
 ==========
 A simple implemantation of the well-known Snake game.
 
-This project is based on *Qt5 framework*. You must have *Qt5 installed on you system*. In addition you must install *qtmultimedia* for the sound effects.
+This project is based on *Qt5 framework*. You must have *Qt5* installed on you system. In addition you must install *qtmultimedia* for the sound effects.
 
 Screenshots
 ===========
@@ -14,14 +14,14 @@ Screenshots
 
 How to play?
 ===========
-- On *Ubuntu 20.04*: Assuming that you have cloned this repository and you are inside the folder that contains the project, open a terminal:
+- On *Ubuntu 20.04*: Assuming that you have cloned this repository and you are inside the folder that contains the files of project, open a terminal:
 
 ``` sh
 qmake
 make
 ./Snake
 ```
-- Further instruction of the controls can be found when starting the game and press the *Help* button on the Start Screen (see screenshots above).
+- Further instruction of the controls can be found when starting the game and pressing the *Help* button on the Start Screen (see screenshots above).
 
 Dependencies
 ============
