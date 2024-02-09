@@ -599,7 +599,7 @@ void Snake::keyPressEvent(QKeyEvent* e) {
         update();
     }
     /*
-        The use can press the esc button
+        The user can press the esc button
         to exit, when the game is Paused
     */
     if (key == Qt::Key_Escape){
