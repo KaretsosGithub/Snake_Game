@@ -381,6 +381,7 @@ void Snake::gameIsPaused(QPainter& qp) {
     // Text to be displayed when the game is paused
     QString pause_message_1 = "Game is Paused";
     QString pause_message_2 = "Press P to continue";
+    QString pause_message_3 = "Press esc to exit";
     QFont pause_font("Courier", 15, QFont::DemiBold);
     QFontMetrics fm(pause_font);
     /*
@@ -389,6 +390,7 @@ void Snake::gameIsPaused(QPainter& qp) {
     */
     int pause_textWidth_1 = fm.horizontalAdvance(pause_message_1);
     int pause_textWidth_2 = fm.horizontalAdvance(pause_message_2);
+    int pause_textWidth_3 = fm.horizontalAdvance(pause_message_3);
     int pause_textHeight = fm.height();
     int combined_height = pause_textHeight * 2;
 
@@ -398,6 +400,7 @@ void Snake::gameIsPaused(QPainter& qp) {
     // Display the text
     qp.drawText(-pause_textWidth_1 / 2, -pause_textHeight / 2, pause_message_1);
     qp.drawText(-pause_textWidth_2 / 2, pause_textHeight / 2, pause_message_2);
+    qp.drawText((-pause_textWidth_3 / 2)-0.5, (pause_textWidth_3 / 3)-0.5, pause_message_3);
 }
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -594,6 +597,19 @@ void Snake::keyPressEvent(QKeyEvent* e) {
             }
         }
         update();
+    }
+    /*
+        The use can press the esc button
+        to exit, when the game is Paused
+    */
+    if (key == Qt::Key_Escape){
+        if (!inGame){
+            return;
+        }else{
+            if(isPaused){
+                qApp->exit();
+            }
+        }
     }
 
     if ((key == Qt::Key_Left) && (!rightDirection)) {
